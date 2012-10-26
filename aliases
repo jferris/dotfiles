@@ -18,6 +18,7 @@ alias gci="git pull --rebase && rake && git push"
 
 # Bundler
 alias b="bundle"
+alias binstubs="bundle --binstubs=bin/stubs"
 
 # Tests and Specs
 alias t="ruby -I test"
