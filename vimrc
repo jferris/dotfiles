@@ -126,18 +126,33 @@ nnoremap <Leader>l :call RunLastSpec()<CR>
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
+" Duplicate a selection
+" Visual mode: D
+vmap D y'>p
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" No Help, please
+nmap <F1> <Esc>
+
+" Window navigation
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+
+" Snippets are activated by Shift+Tab
+let g:snippetsEmu_key = "<S-Tab>"
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
+
+" Press Shift+P while in visual mode to replace the selection without
+" overwriting the default register
+vmap P p :call setreg('"', getreg('0')) <CR>
+
+" Start git commit messages in insert mode
+au FileType gitcommit execute "normal" "gg"
+au FileType gitcommit startinsert
+
+" Help keep lines within 80 columns
+set colorcolumn=80
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
