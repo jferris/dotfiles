@@ -85,8 +85,13 @@ highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
-set number
-set numberwidth=5
+if v:version > 702
+	set relativenumber
+	set numberwidth=4
+else
+	set number
+	set numberwidth=5
+endif
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
