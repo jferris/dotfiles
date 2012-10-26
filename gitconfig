@@ -1,3 +1,6 @@
+# ADD LOCAL CONFIGURATION HERE
+
+# DO NOT EDIT BELOW THIS LINE
 [push]
   default = current
 [color]
