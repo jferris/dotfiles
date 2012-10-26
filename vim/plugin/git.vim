@@ -1,4 +1,4 @@
-function! GitUnmerged(args)
+function! GitUnmerged()
   let unmerged = system("git-unmerged-next")
   if unmerged == ''
     echo "No unmerged files remaining"
@@ -7,11 +7,11 @@ function! GitUnmerged(args)
   endif
 endfunction
 
-function! GitResolve(args)
+function! GitResolve()
   execute "silent !git add %"
   write
   call GitUnmerged()
 endfunction
 
-command! -nargs=0 GitUnmerged call GitUnmerged(<q-args>)
-command! -nargs=0 GitResolve call GitResolve(<q-args>)
+command! -nargs=0 GitUnmerged call GitUnmerged()
+command! -nargs=0 GitResolve call GitResolve()
