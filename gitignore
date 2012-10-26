@@ -1,7 +1,10 @@
 *.DS_Store
+*.scratch.*
 *.sw[nop]
 .bundle
+.sass-cache/
 .env
+bin/stubs
 db/*.sqlite3
 log/*.log
 rerun.txt
