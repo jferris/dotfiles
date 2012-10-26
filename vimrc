@@ -74,6 +74,11 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+" Use The Silver Searcher instead of Grep when available
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
+endif
+
 " Color scheme
 colorscheme github
 highlight NonText guibg=#060606
