@@ -80,9 +80,10 @@ if executable("ag")
 endif
 
 " Color scheme
-colorscheme github
+colorscheme macvim
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " Numbers
 if v:version > 702
