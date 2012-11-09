@@ -76,7 +76,7 @@ endif
 
 " Use The Silver Searcher instead of Grep when available
 if executable("ag")
-  set grepprg=ag\ --nogroup\ --nocolor\ --column
+  set grepprg=ag\ --nogroup\ --nocolor
 endif
 
 " Color scheme
