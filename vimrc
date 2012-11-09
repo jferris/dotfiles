@@ -159,6 +159,9 @@ autocmd QuickFixCmdPost *grep* cwindow
 " Normal mode: K
 nmap K :grep "\b<C-R><C-W>\b"<CR>
 
+" Replace double quotes with single quotes
+nmap <Leader>' :s/"/'/g<CR>
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
