@@ -164,7 +164,8 @@ nmap <Leader>' :s/"/'/g<CR>
 
 " Markdown files end in .md
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.md set spell
+au BufRead,BufNewFile *.md setlocal spell
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
