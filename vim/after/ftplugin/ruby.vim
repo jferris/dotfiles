@@ -100,6 +100,13 @@ function! RubyToggleOneliner()
   endif
 endfunction
 
+function! DefaultFeatureTitle()
+  let filename = expand("%:t")
+  let without_suffix = substitute(filename, "_spec.rb$", "", "")
+  let humanized = substitute(without_suffix, "_", " ", "g")
+  return humanized
+endfunction
+
 nmap <buffer> <Bar> :call RubyToggleOneliner()<CR>
 
 " general ruby snippets
@@ -169,6 +176,10 @@ Snippet atsh it '<{description}>' do<CR>``SpecSubject()``.<{attr}>.should <{}><C
 Snippet atshbe it '<{description}>' do<CR>``SpecSubject()``.<{attr}>.should be_<{}><CR>end
 Snippet sheq should == <{}>
 Snippet cont context "<{description}>" do<CR><{}><CR>end
+
+" capybara
+Snippet feat feature '``DefaultFeatureTitle()``' do<CR><{}><CR>end
+Snippet scen scenario '<{}>' do<CR><{}><CR>end
 
 "" bourne
 Snippet shrec should have_received(:<{}>)
