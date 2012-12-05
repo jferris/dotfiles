@@ -8,8 +8,8 @@ function! GitUnmerged()
 endfunction
 
 function! GitResolve()
-  execute "silent !git add %"
   write
+  execute "silent !git add %"
   call GitUnmerged()
 endfunction
 
