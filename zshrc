@@ -47,9 +47,6 @@ setopt histignoredups
 # keep more history
 export HISTSIZE=200
 
-# look for ey config in project dirs
-export EYRC=./.eyrc
-
 # Allow [ or ] whereever you want
 unsetopt nomatch
 
