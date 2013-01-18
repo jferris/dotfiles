@@ -28,6 +28,9 @@ alias cuc="bundle exec cucumber"
 alias zs="zeus rspec --format=documentation"
 alias z="zeus"
 
+# Ruby
+alias rk="rake"
+
 # Rubygems
 alias gi="gem install"
 alias giv="gem install -v"
