@@ -146,7 +146,7 @@ let g:syntastic_check_on_open=1
 vmap P p :call setreg('"', getreg('0')) <CR>
 
 " Start git commit messages in insert mode
-au FileType gitcommit execute "normal" "gg"
+au FileType gitcommit 1mark\"
 au FileType gitcommit startinsert
 
 " Help keep lines within 80 columns
