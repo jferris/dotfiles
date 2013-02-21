@@ -53,5 +53,8 @@ unsetopt nomatch
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+eval "$(rbenv init -)"
+export PATH="./bin/stubs:$PATH"
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
