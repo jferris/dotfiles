@@ -1,6 +1,6 @@
 function! RunSpec(args)
   let spec = expand("%")
-  let s:last_spec_command = "rspec -fd " . a:args . " " . spec
+  let s:last_spec_command = "rspec " . a:args . " " . spec
   call RunInTerminal(s:last_spec_command)
 endfunction
 

@@ -5,6 +5,8 @@
 .sass-cache/
 .env
 bin/stubs
+bin/spring
+bin/rspec
 db/*.sqlite3
 log/*.log
 rerun.txt

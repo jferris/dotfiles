@@ -1,7 +1,11 @@
 rspec() {
-  if [ -S .zeus.sock ]; then
-    zeus rspec "$@"
+  if [ -f bin/spring ]; then
+      bin/spring rspec "$@"
   else
-    command rspec "$@"
+    if [ -S .zeus.sock ]; then
+      zeus rspec "$@"
+    else
+      command rspec "$@"
+    fi
   fi
 }
