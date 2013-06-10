@@ -26,7 +26,12 @@ function! SpecDescribedType()
     let line = getline(line)
     return substitute(matchstr(line, "describe [^, ]*"), "^describe ", "", "")
   else
-    return rails#camelize(substitute(expand("%:t:r"), "_spec$", "", ""))
+    let spec_name = substitute(expand("%:r"), "_spec$", "", "")
+    let spec_name = substitute(spec_name, "^" . RailsRoot() . "/", "", "")
+    for path in ["spec", "lib", "models", "controllers"]
+      let spec_name = substitute(spec_name, "^" . path . "/", "", "")
+    endfor
+    return rails#camelize(spec_name)
   endif
 endfunction
 
@@ -107,6 +112,32 @@ function! DefaultFeatureTitle()
   return humanized
 endfunction
 
+function! InitializerArgument()
+  let current_line = getline(line("."))
+  let assignment = substitute(current_line, "^\\s*@\\?", "", "")
+  let variable = substitute(assignment, "\\s*=", "", "")
+  return variable
+endfunction
+
+function! BeginClass()
+  let name = expand("%:r")
+  let name = substitute(name, "^" . RailsRoot() . "/", "", "")
+  for path in ["lib", "models", "controllers"]
+    let name = substitute(name, "^" . path . "/", "", "")
+  endfor
+  let name = rails#camelize(name)
+  let names = split(name, "::")
+  let className = names[-1]
+  let modules = names[0:-2]
+  let opening = ""
+  let closing = ""
+  for module in modules
+    let opening = opening . "module " . module . "\n"
+    let closing = closing . "\n" . "end"
+  endfor
+  return opening . "class " . className . "\n<{}>\nend" . closing
+endfunction
+
 nmap <buffer> <Bar> :call RubyToggleOneliner()<CR>
 
 " general ruby snippets
@@ -114,7 +145,9 @@ Snippet each each do |``IterVar()``|<CR><{}><CR>end
 Snippet map map do |``IterVar()``|<CR><{}><CR>end
 Snippet eachl each { |``IterVar()``| <{}> }
 Snippet mapl map { |``IterVar()``| <{}> }
-Snippet @ @<{attribute}> = <{attribute}><{}>
+" Snippet @ @<{attribute}> = <{attribute}><{}>
+Snippet = = ``InitializerArgument()``<{}>
+Snippet class ``BeginClass()``
 
 " active record associations
 Snippet bt belongs_to :<{}>
@@ -176,6 +209,7 @@ Snippet atsh it '<{description}>' do<CR>``SpecSubject()``.<{attr}>.should <{}><C
 Snippet atshbe it '<{description}>' do<CR>``SpecSubject()``.<{attr}>.should be_<{}><CR>end
 Snippet sheq should == <{}>
 Snippet cont context "<{description}>" do<CR><{}><CR>end
+Snippet rsh require 'spec_helper'<CR><CR><{}>
 
 " capybara
 Snippet feat feature '``DefaultFeatureTitle()``' do<CR><{}><CR>end
