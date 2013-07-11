@@ -9,7 +9,6 @@ function! RerunSpec()
 endfunction
 
 function! RunInTerminal(command)
-  wall
   execute ":silent !run-in-terminal '" . a:command . "'"
 endfunction
 
