@@ -14,3 +14,5 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 zeus.json
+custom_plan.rb
+.jhw-cache
