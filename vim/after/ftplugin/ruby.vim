@@ -160,6 +160,9 @@ Snippet hmt has_many :<{association}>, :through => <{}>
 Snippet vpo validates_presence_of :<{}>
 Snippet vuo validates_uniqueness_of :<{}>
 
+" activemodel validations
+Snippet vpo validates :<{}>, presence: true
+
 " shoulda validation matchers
 Snippet shvpo it { should validate_presence_of(:<{}>) }
 Snippet shal should_allow_values_for :<{attribute}>, <{}>
