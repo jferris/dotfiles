@@ -51,6 +51,7 @@ unsetopt nomatch
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+# rbenv, binstubs
 eval "$(rbenv init -)"
 export PATH="./bin:./bin/stubs:$PATH"
 
