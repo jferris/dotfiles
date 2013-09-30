@@ -120,10 +120,11 @@ function! InitializerArgument()
 endfunction
 
 function! BeginClass()
-  let name = expand("%:r")
-  let name = substitute(name, "^" . RailsRoot() . "/", "", "")
-  for path in ["lib", "models", "controllers"]
-    let name = substitute(name, "^" . path . "/", "", "")
+  let path = expand("%:r")
+  let path = substitute(path, "^" . RailsRoot() . "/", "", "")
+  let name = path
+  for segment in ["app", "lib", "models", "controllers"]
+    let name = substitute(name, "^" . segment . "/", "", "")
   endfor
   let name = rails#camelize(name)
   let names = split(name, "::")
@@ -135,7 +136,11 @@ function! BeginClass()
     let opening = opening . "module " . module . "\n"
     let closing = closing . "\n" . "end"
   endfor
-  return opening . "class " . className . "\n<{}>\nend" . closing
+  let classDeclaration = className
+  if stridx(path, "/controllers/") > -1
+    let classDeclaration = classDeclaration . " < ApplicationController"
+  endif
+  return opening . "class " . classDeclaration . "\n<{}>\nend" . closing
 endfunction
 
 nmap <buffer> <Bar> :call RubyToggleOneliner()<CR>
