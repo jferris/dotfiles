@@ -5,6 +5,13 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
+# Client projects
+for project in ~/.projects/*; do
+  source $project/env
+  source $project/index
+  fpath=($project/completion $fpath)
+done
+
 # completion
 autoload -U compinit
 compinit
