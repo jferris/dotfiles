@@ -1,0 +1,7 @@
+dbc() {
+  if [ -S .zeus.sock ]; then
+    zeus dbconsole -p
+  else
+    dbconsole -p
+  fi
+}
