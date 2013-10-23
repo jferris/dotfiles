@@ -25,8 +25,8 @@ alias t="ruby -I test"
 alias cuc="bundle exec cucumber"
 
 # Zeus
-alias zs="zeus rspec --format=documentation"
 alias z="zeus"
+alias zs="zeus start"
 
 # Ruby
 alias rk="rake"
