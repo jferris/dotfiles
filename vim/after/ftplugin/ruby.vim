@@ -17,6 +17,14 @@ function! SpecSubject()
   return rails#underscore(SpecDescribed())
 endfunction
 
+function! SpecRoot()
+  if strlen(RailsRoot()) > 0
+    return RailsRoot()
+  else
+    return getcwd()
+  endif
+endfunction
+
 function! SpecDescribedType()
   let curline = line(".")
   let curcol  = col(".")
@@ -27,7 +35,7 @@ function! SpecDescribedType()
     return substitute(matchstr(line, "describe [^, ]*"), "^describe ", "", "")
   else
     let spec_name = substitute(expand("%:r"), "_spec$", "", "")
-    let spec_name = substitute(spec_name, "^" . RailsRoot() . "/", "", "")
+    let spec_name = substitute(spec_name, "^" . SpecRoot() . "/", "", "")
     for path in ["spec", "lib", "models", "controllers"]
       let spec_name = substitute(spec_name, "^" . path . "/", "", "")
     endfor
@@ -121,7 +129,7 @@ endfunction
 
 function! BeginClass()
   let path = expand("%:r")
-  let path = substitute(path, "^" . RailsRoot() . "/", "", "")
+  let path = substitute(path, "^" . SpecRoot() . "/", "", "")
   let name = path
   for segment in ["app", "lib", "models", "controllers"]
     let name = substitute(name, "^" . segment . "/", "", "")
