@@ -17,3 +17,4 @@ zeus.json
 custom_plan.rb
 .jhw-cache
 .agignore
+.zeus.sock
