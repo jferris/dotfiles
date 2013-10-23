@@ -89,11 +89,11 @@ colorscheme custom
 
 " Numbers
 if v:version > 702
-	set relativenumber
-	set numberwidth=4
+  set relativenumber
+  set numberwidth=4
 else
-	set number
-	set numberwidth=5
+  set number
+  set numberwidth=5
 endif
 
 " Snippets are activated by Shift+Tab
