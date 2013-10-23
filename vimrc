@@ -80,6 +80,10 @@ if executable("ag")
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" Setup ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_root_markers = ['app']
+
 " Color scheme
 colorscheme custom
 
