@@ -7,7 +7,6 @@ done
 
 # Client projects
 for project in ~/.projects/*; do
-  source $project/env
   source $project/index
   fpath=($project/completion $fpath)
 done
