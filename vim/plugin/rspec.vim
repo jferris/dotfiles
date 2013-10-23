@@ -1,3 +1,5 @@
+let g:test_path_prefix = "."
+
 function! RunSpec(args)
   if IsTestUnit()
     let s:last_spec_command = "ruby -Itest " . a:args
@@ -7,16 +9,24 @@ function! RunSpec(args)
   call RunInTerminal(s:last_spec_command)
 endfunction
 
+function! PathToSpec()
+  let path = expand("%")
+  if stridx(path, "/") == 0 || stridx(path, "~") == 0
+    return path
+  else
+    return g:test_path_prefix . "/" . path
+  endif
+endfunction
+
 function! RunAllSpecs()
-  call RunSpec(expand("%"))
+  call RunSpec(PathToSpec())
 endfunction
 
 function! RunSpecAtLine(line)
-  let spec = expand("%")
   if IsTestUnit()
-    call RunSpec(spec . " " . "-n \"/" . TestNameAtLine(a:line) . "/\"")
+    call RunSpec(PathToSpec() . " " . "-n \"/" . TestNameAtLine(a:line) . "/\"")
   else
-    call RunSpec("-l " . a:line . " " . spec)
+    call RunSpec("-l " . a:line . " " . PathToSpec())
   end
 endfunction
 
