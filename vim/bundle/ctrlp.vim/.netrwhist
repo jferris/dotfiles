@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/jferris/Source/sermo/apps/aramak'
-let g:netrw_dirhist_2='/Users/jferris/Source/sermo/lib/suds_client'
-let g:netrw_dirhist_3='/Users/jferris/Source/sermo/apps/posts'
-let g:netrw_dirhist_4='/Users/jferris/Source/sermo'
-let g:netrw_dirhist_5='/Users/jferris/.bin'
-let g:netrw_dirhist_6='/Users/jferris/Source/sermo/apps/suds'

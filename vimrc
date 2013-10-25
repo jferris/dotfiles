@@ -83,6 +83,7 @@ endif
 " Setup ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_root_markers = ['app']
+let g:ctrlp_use_caching = 0
 
 " Color scheme
 colorscheme custom
