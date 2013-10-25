@@ -74,16 +74,8 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Use The Silver Searcher instead of Grep when available
-if executable("ag")
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
-" Setup ctrlp
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Look for Rails root instead of just .git root
 let g:ctrlp_root_markers = ['app']
-let g:ctrlp_use_caching = 0
 
 " Color scheme
 colorscheme custom
@@ -101,8 +93,6 @@ endif
 let g:snippetsEmu_key = "<S-Tab>"
 
 " Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
 set wildmode=list:longest,list:full
 imap <Tab> <C-P>
 set complete=.,w,t,b
@@ -137,6 +127,10 @@ vmap D y'>p
 " No Help, please
 nmap <F1> <Esc>
 
+" Press Shift+P while in visual mode to replace the selection without
+" overwriting the default register
+vmap P p :call setreg('"', getreg('0')) <CR>
+
 " Window navigation
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
@@ -146,10 +140,6 @@ let g:snippetsEmu_key = "<S-Tab>"
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
-
-" Press Shift+P while in visual mode to replace the selection without
-" overwriting the default register
-vmap P p :call setreg('"', getreg('0')) <CR>
 
 " Start git commit messages in insert mode
 au FileType gitcommit 1mark\"
