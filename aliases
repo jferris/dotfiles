@@ -14,7 +14,7 @@ alias e="$EDITOR"
 alias v="$VISUAL"
 
 # git
-alias gci="git pull --rebase && rake && git push"
+alias g="git"
 
 # Bundler
 alias b="bundle"
@@ -22,6 +22,7 @@ alias binstubs="bundle --binstubs"
 
 # Tests and Specs
 alias t="ruby -I test"
+alias s="bundle exec rspec"
 alias cuc="bundle exec cucumber"
 
 # Zeus
