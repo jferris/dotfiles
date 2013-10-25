@@ -4,6 +4,7 @@
 .bundle
 .sass-cache/
 .env
+bin
 bin/stubs
 bin/spring
 bin/rspec
