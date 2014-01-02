@@ -40,11 +40,15 @@ setopt prompt_subst
 # prompt
 export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
 
-# ignore duplicate history entries
-setopt histignoredups
-
-# keep more history
-export HISTSIZE=200
+# more history
+setopt extended_history
+HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export HISTFILESIZE=$HISTSIZE
+export SAVEHIST=$HISTSIZE
+setopt inc_append_history
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
 
 # Allow [ or ] whereever you want
 unsetopt nomatch
