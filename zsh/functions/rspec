@@ -1,6 +1,6 @@
 rspec() {
-  if [ -f bin/spring ]; then
-      bin/spring rspec "$@"
+  if [ -f config/spring.rb ]; then
+    spring rspec "$@"
   else
     if [ -S .zeus.sock ]; then
       zeus rspec "$@"
