@@ -1,4 +1,5 @@
 # load our own completion functions
+fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(~/.zsh/completion $fpath)
 
 for function in ~/.zsh/functions/*; do
