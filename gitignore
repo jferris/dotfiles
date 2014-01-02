@@ -4,10 +4,8 @@
 .bundle
 .sass-cache/
 .env
-bin
-bin/stubs
-bin/spring
-bin/rspec
+.foreman
+**/bin/stubs
 db/*.sqlite3
 log/*.log
 rerun.txt
