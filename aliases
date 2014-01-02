@@ -18,7 +18,7 @@ alias g="git"
 
 # Bundler
 alias b="bundle"
-alias binstubs="bundle --binstubs"
+alias binstubs="bundle --binstubs=bin/stubs"
 
 # Tests and Specs
 alias t="ruby -I test"
