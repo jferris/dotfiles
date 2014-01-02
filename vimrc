@@ -78,10 +78,19 @@ if executable('ag')
 endif
 
 " Look for Rails root instead of just .git root
-let g:ctrlp_root_markers = ['app']
+let g:ctrlp_root_markers = ['Gemfile', 'Rakefile']
+
+" Use CtrlP cmatcher when possible
+if has("python")
+  let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+endif
+
+" <Leader>d searches the current file's path using ctrlp
+nmap <Leader>d :CtrlP <C-R>=expand("%:h")<CR><CR>
 
 " Color scheme
 colorscheme custom
+
 
 " Numbers
 if v:version > 702
@@ -143,6 +152,9 @@ let g:snippetsEmu_key = "<S-Tab>"
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
+
+" use Ruby from rbenv instead of system Ruby to check syntax
+let g:syntastic_ruby_exec = '~/.rbenv/shims/ruby'
 
 " Start git commit messages in insert mode
 au FileType gitcommit 1mark\"
