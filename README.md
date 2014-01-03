@@ -8,6 +8,11 @@ Set zsh as your login shell.
 
     chsh -s /bin/zsh
 
+Install [rcm](https://github.com/mike-burns/rcm).
+
+    brew tap mike-burns/rcm
+    brew install rcm
+
 Install
 -------
 
@@ -16,16 +21,20 @@ Clone onto your laptop:
     git clone git://github.com/thoughtbot/dotfiles.git
 
 (Or, [fork and keep your fork
-updated](http://robots.thoughtbot.com/post/5133345960)).
+updated](http://robots.thoughtbot.com/keeping-a-github-fork-updated)).
 
 Install:
 
-    cd dotfiles
-    ./install.sh
+    rcup -d dotfiles -x README.md -x LICENSE
 
-This will create symlinks for config files in your home directory.
+This will create symlinks for config files in your home directory. The
+`-x` options, which exclude the `README.md` and `LICENSE` files, are
+needed during installation but can be skipped once the `.rcrc`
+configuration file is symlinked in.
 
-You can safely run `./install.sh` multiple times to update.
+You can safely run `rcup` multiple times to update:
+
+    rcup
 
 Make your own customizations
 ----------------------------
@@ -88,7 +97,7 @@ What's in it?
 * Use [GitHub color scheme](https://github.com/croaky/vim-colors-github).
 * Use [Vundle](https://github.com/gmarik/vundle) to manage plugins.
 
-[tmux](http://robots.thoughtbot.com/post/2641409235/a-tmux-crash-course)
+[tmux](http://robots.thoughtbot.com/a-tmux-crash-course)
 configuration:
 
 * Improve color resolution.
