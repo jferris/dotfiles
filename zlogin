@@ -11,12 +11,6 @@ git_prompt_info() {
   fi
 }
 
-# display path relative to git root
-git_path() {
-  prefix=$(git rev-parse --show-prefix 2> /dev/null)
-  echo "/${prefix}"
-}
-
 # makes color constants available
 autoload -U colors
 colors
