@@ -25,7 +25,7 @@ setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
 
 # Try to correct command line spelling
-setopt correct correctall
+setopt correct
 
 # Enable extended globbing
 setopt extendedglob
