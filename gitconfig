@@ -38,15 +38,8 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-[difftool]
-  prompt = false
 [merge]
   ff = only
-  tool = diffconflicts
-[mergetool "diffconflicts"]
-  cmd = diffconflicts mvim $BASE $LOCAL $REMOTE $MERGED
-  trustExitCode = true
-  keepBackup = false
 [include]
   path = .gitconfig.local
 [commit]
