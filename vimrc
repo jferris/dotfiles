@@ -94,6 +94,7 @@ colorscheme custom
 
 " Numbers
 if v:version > 702
+  set number
   set relativenumber
   set numberwidth=4
 else
