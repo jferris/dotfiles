@@ -24,9 +24,6 @@ setopt hist_reduce_blanks
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
 
-# Try to correct command line spelling
-setopt correct
-
 # Enable extended globbing
 setopt extendedglob
 
