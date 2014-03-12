@@ -62,9 +62,5 @@ export EDITOR=$VISUAL
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-# rbenv, binstubs
-eval "$(rbenv init -)"
-export PATH="./bin:./bin/stubs:$PATH"
-
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
