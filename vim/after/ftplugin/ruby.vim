@@ -219,20 +219,15 @@ Snippet let let(:<{actor}>) { <{}> }
 Snippet let! let!(:<{actor}>) { <{}> }
 Snippet sub subject { <{}> }
 Snippet it it '<{description}>' do<CR><{}><CR>end
-Snippet itsh it '<{description}>' do<CR>``SpecSubject()``.should <{}><CR>end
-Snippet itshbe it '<{description}>' do<CR>``SpecSubject()``.should be_<{}><CR>end
-Snippet atsh it '<{description}>' do<CR>``SpecSubject()``.<{attr}>.should <{}><CR>end
-Snippet atshbe it '<{description}>' do<CR>``SpecSubject()``.<{attr}>.should be_<{}><CR>end
-Snippet sheq should == <{}>
+Snippet expeq expect(<{subject}>).to eq(<{}>)
+Snippet exprec expect(<{subject}>).to have_received(:<{}>)
+Snippet expbe expect(<{subject}>).to be_<{}>
 Snippet cont context "<{description}>" do<CR><{}><CR>end
 Snippet rsh require 'spec_helper'<CR><CR><{}>
 
 " capybara
 Snippet feat feature '``DefaultFeatureTitle()``' do<CR><{}><CR>end
 Snippet scen scenario '<{}>' do<CR><{}><CR>end
-
-"" bourne
-Snippet shrec should have_received(:<{}>)
 
 " controller responses
 Snippet renda render :action => '<{}>'
