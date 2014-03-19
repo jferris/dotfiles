@@ -1,0 +1,24 @@
+[alias]
+  a = add --all
+  ad = !git add -A && git diff --cached
+  ap = commit --amend -C HEAD
+  bd = !sh -c 'git branch -D $1 && git push origin :$1' -
+  c = commit -v
+  com = checkout master
+  contrib = !sh -c 'git log $1 --pretty=format:%an | sort | uniq' -
+  cp = cherry-pick
+  dic = diff --cached
+  ignore-date = rebase origin/master --ignore-date
+  mm = !git checkout master && git merge @{-1}
+  pr = !git push -u && hub pull-request
+  pristine = !git remote prune origin && git gc --aggressive && git reset --hard && git checkout master && git clean -dfx && git stash cle
+  ps = push
+  rbc = !git rebase --continue && git status
+  rbi = !git fetch origin && git rebase -i origin/master
+  ready = !git rebase --interactive origin/master && git rebase origin/master --ignore-date && git push -f && git mm && git push && git br
+  rebase-origin = !git fetch origin && git rebase origin/master
+  unwip = !test "`git log -n1 --pretty=format:%s`" = "wip" && git reset HEAD~1
+  wip = !git add -A && git commit -m "wip"
+  [user]
+    name = Joe Ferris
+  email = jferris@thoughtbot.com

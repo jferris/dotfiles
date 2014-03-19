@@ -1,0 +1,12 @@
+if v:version > 702
+  set number
+  set relativenumber
+  set numberwidth=4
+endif
+
+set complete=.,w,t,b
+
+" Use CtrlP cmatcher when possible
+if has("python")
+  let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+endif
