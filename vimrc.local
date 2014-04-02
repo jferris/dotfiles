@@ -1,12 +1,18 @@
+" Use relativenumber
 if v:version > 702
   set number
   set relativenumber
   set numberwidth=4
 endif
 
-set complete=.,w,t,b
+" Complete terms from all buffers
+set complete=.,w,b,u,t,i
 
-" Use CtrlP cmatcher when possible
-if has("python")
-  let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-endif
+" Search for the word under the cursor
+" Normal mode: K
+nmap K :grep "\b<C-R><C-W>\b"<CR>
+
+set colorcolumn=80
+
+" Snippets are activated by Shift+Tab
+let g:snippetsEmu_key = "<S-Tab>"
