@@ -23,4 +23,4 @@ function! CompleteDirInCdPath(ArgLead, CmdLine, CursorPos)
 endfunction
 
 command! -nargs=1 -complete=custom,CompleteDirInCdPath Jump call Jump(<q-args>)
-cabbr cd Jump
+cabbr j Jump
