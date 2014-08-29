@@ -12,7 +12,8 @@ set complete=.,w,b,u,t,i
 " Normal mode: K
 nmap K :grep "\b<C-R><C-W>\b"<CR>
 
-set colorcolumn=80
+set textwidth=80
+set colorcolumn=+1
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
