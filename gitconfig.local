@@ -16,7 +16,7 @@
   ps = push
   rbc = !git rebase --continue && git status
   rbi = !git fetch origin && git rebase -i origin/master
-  ready = !git rebase --interactive origin/master && git rebase origin/master --ignore-date && git push -f && git mm && git push && git br
+  ready = !git fetch origin && git rebase --interactive origin/master && git rebase origin/master --ignore-date && git push -f && git mm && git push
   rebase-origin = !git fetch origin && git rebase origin/master
   unwip = !test "`git log -n1 --pretty=format:%s`" = "wip" && git reset HEAD~1
   wip = !git add -A && git commit -m "wip"
