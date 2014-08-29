@@ -10,6 +10,7 @@
   dic = diff --cached
   ignore-date = rebase origin/master --ignore-date
   mm = !git checkout master && git merge @{-1}
+  pending = !git fetch origin && git fetch production && git log --reverse production/master..origin/master
   pr = !git push -u && hub pull-request
   pristine = !git remote prune origin && git gc --aggressive && git reset --hard && git checkout master && git clean -dfx && git stash cle
   ps = push
