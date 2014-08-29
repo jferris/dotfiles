@@ -36,10 +36,15 @@ function! SpecDescribedType()
   else
     let spec_name = substitute(expand("%:r"), "_spec$", "", "")
     let spec_name = substitute(spec_name, "^" . SpecRoot() . "/", "", "")
-    for path in ["spec", "lib", "models", "controllers"]
+    for path in ["spec", "lib", "models", "controllers", "services", "mailers"]
       let spec_name = substitute(spec_name, "^" . path . "/", "", "")
     endfor
-    return rails#camelize(spec_name)
+    if stridx(spec_name, "views") == -1
+      return rails#camelize(spec_name)
+    else
+      let spec_name = substitute(spec_name, "^views/\\(.*\.html\\)\..*$", "\"\\1\"", "")
+      return spec_name
+    endif
   endif
 endfunction
 
@@ -53,9 +58,9 @@ endfunction
 
 function! DefaultSpecDescribe(suffix)
   if InSpecBlock()
-    return "describe"
+    return "describe \"<{description}>\""
   else
-    return "describe " . SpecDescribedType() . a:suffix
+    return "describe " . SpecDescribedType()
   endif
 endfunction
 
@@ -131,7 +136,7 @@ function! BeginClass()
   let path = expand("%:r")
   let path = substitute(path, "^" . SpecRoot() . "/", "", "")
   let name = path
-  for segment in ["app", "lib", "models", "controllers"]
+  for segment in ["app", "lib", "models", "controllers", "services", "mailers"]
     let name = substitute(name, "^" . segment . "/", "", "")
   endfor
   let name = rails#camelize(name)
@@ -212,18 +217,18 @@ Snippet shroute should route(:<{method}>, "<{path}>").to(:action => :<{}>)
 Snippet shfl should set_the_flash.to(/<{}>/i)
 
 "rspec
-Snippet desc ``DefaultSpecDescribe(",")`` '<{description}>' do<CR><{}><CR>end
+Snippet desc ``DefaultSpecDescribe(",")`` do<CR><{}><CR>end
 Snippet descn ``DefaultSpecDescribe("")`` do<CR><{}><CR>end
 Snippet bef before do<CR><{}><CR>end
 Snippet let let(:<{actor}>) { <{}> }
 Snippet let! let!(:<{actor}>) { <{}> }
 Snippet sub subject { <{}> }
-Snippet it it '<{description}>' do<CR><{}><CR>end
+Snippet it it "<{description}>" do<CR><{}><CR>end
 Snippet expeq expect(<{subject}>).to eq(<{}>)
 Snippet exprec expect(<{subject}>).to have_received(:<{}>)
 Snippet expbe expect(<{subject}>).to be_<{}>
-Snippet cont context "<{description}>" do<CR><{}><CR>end
-Snippet rsh require 'spec_helper'<CR><CR><{}>
+Snippet cont context '<{description}>' do<CR><{}><CR>end
+Snippet rsh require "spec_helper"<CR><CR><{}>
 
 " capybara
 Snippet feat feature '``DefaultFeatureTitle()``' do<CR><{}><CR>end
