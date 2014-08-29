@@ -5,6 +5,7 @@ function! CopyRTF() range
   endif
   let command = command . "pygmentize -f rtf '-Pfontface=Inconsolata' -l " . &filetype . " | pbcopy"
   exec ":silent :" . command
+  redraw!
 endfunction
 
 command! -nargs=0 -range CopyRTF <line1>,<line2>call CopyRTF()
