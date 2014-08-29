@@ -1,3 +1,4 @@
 Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'vim-scripts/snippetsEmu'
 Bundle 'skwp/greplace.vim'
+Bundle 'tpope/vim-dispatch'

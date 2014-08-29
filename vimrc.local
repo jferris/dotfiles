@@ -19,3 +19,11 @@ set colorcolumn=+1
 let g:snippetsEmu_key = "<S-Tab>"
 
 set wildmenu wildmode=longest:full,full
+
+" Run specs using vim-dispatch
+let g:rspec_command = "Dispatch rspec {spec}"
+
+nmap <Leader>d :Dispatch 
+nmap <Leader>g :Start gitsh<CR>
+nmap <Leader>z :Start<CR>
+nmap <Leader>c :Start rails console<CR>
