@@ -16,6 +16,7 @@ set textwidth=80
 set colorcolumn=+1
 
 " Snippets are activated by Shift+Tab
+iunmap <S-Tab>
 let g:snippetsEmu_key = "<S-Tab>"
 
 set wildmenu wildmode=longest:full,full
