@@ -1,0 +1,6 @@
+# Use default prefix
+unbind C-a
+set -g prefix C-b
+
+# Switch to last pane
+bind-key C-b last-pane
