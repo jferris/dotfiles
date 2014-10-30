@@ -3,7 +3,7 @@
   ad = !git add -A && git diff --cached
   ap = commit --amend -C HEAD
   bd = !sh -c 'git branch -D $1 && git push origin :$1' -
-  c = commit -v
+  c = commit -v -S
   com = checkout master
   contrib = !sh -c 'git log $1 --pretty=format:%an | sort | uniq' -
   cp = cherry-pick
@@ -20,6 +20,7 @@
   rebase-origin = !git fetch origin && git rebase origin/master
   unwip = !test "`git log -n1 --pretty=format:%s`" = "wip" && git reset HEAD~1
   wip = !git add -A && git commit -m "wip"
-  [user]
-    name = Joe Ferris
+[user]
+  name = Joe Ferris
   email = jferris@thoughtbot.com
+  signingkey = 678CF148
