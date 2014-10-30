@@ -26,5 +26,5 @@ let g:rspec_command = "Dispatch rspec {spec}"
 
 nmap <Leader>d :Dispatch 
 nmap <Leader>g :Start gitsh<CR>
-nmap <Leader>z :Start<CR>
+nmap <Leader>z :Start zsh<CR>
 nmap <Leader>c :Start rails console<CR>
