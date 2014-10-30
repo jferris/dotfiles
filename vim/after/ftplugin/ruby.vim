@@ -36,7 +36,7 @@ function! SpecDescribedType()
   else
     let spec_name = substitute(expand("%:r"), "_spec$", "", "")
     let spec_name = substitute(spec_name, "^" . SpecRoot() . "/", "", "")
-    for path in ["spec", "lib", "models", "controllers", "services", "mailers"]
+    for path in ["spec", "lib", "models", "controllers", "services", "mailers", "helpers"]
       let spec_name = substitute(spec_name, "^" . path . "/", "", "")
     endfor
     if stridx(spec_name, "views") == -1
@@ -227,12 +227,13 @@ Snippet it it "<{description}>" do<CR><{}><CR>end
 Snippet expeq expect(<{subject}>).to eq(<{}>)
 Snippet exprec expect(<{subject}>).to have_received(:<{}>)
 Snippet expbe expect(<{subject}>).to be_<{}>
-Snippet cont context '<{description}>' do<CR><{}><CR>end
+Snippet cont context "<{description}>" do<CR><{}><CR>end
 Snippet rsh require "spec_helper"<CR><CR><{}>
+Snippet rrh require "rails_helper"<CR><CR><{}>
 
 " capybara
-Snippet feat feature '``DefaultFeatureTitle()``' do<CR><{}><CR>end
-Snippet scen scenario '<{}>' do<CR><{}><CR>end
+Snippet feat feature "``DefaultFeatureTitle()``" do<CR><{}><CR>end
+Snippet scen scenario "<{}>" do<CR><{}><CR>end
 
 " controller responses
 Snippet renda render :action => '<{}>'
