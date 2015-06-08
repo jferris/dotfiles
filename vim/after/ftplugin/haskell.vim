@@ -11,11 +11,22 @@ endfunction
 " Search for the current word using Hoogle
 nmap <buffer> <Leader>K :call Hoogle("<C-R><C-W>")<CR>
 
+" Run tests
+nmap <buffer> <Leader>t :!cabal test<CR>
+nmap <buffer> <Leader>l :!cabal test<CR>
+nmap <buffer> <Leader>s :!cabal test<CR>
+
 " Compile with cabal
 let s:cabalFilePresent = filereadable(glob('*.cabal'))
 if s:cabalFilePresent
   setl makeprg=cabal\ build
+
+  " Load in Cabal repl
+  nmap <buffer> <Leader>i :Start cabal exec -- ghci %<CR>
 else
+  " Load in GHCI
+  nmap <buffer> <Leader>i :Start ghci %<CR>
+
   let s:currentFile = expand('%')
   if !exists('b:qfOutputdir')
     let b:qfOutputdir = tempname()
