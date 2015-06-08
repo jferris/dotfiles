@@ -28,3 +28,14 @@ nmap <Leader>d :Dispatch
 nmap <Leader>g :Start gitsh<CR>
 nmap <Leader>z :Start zsh<CR>
 nmap <Leader>c :Start rails console<CR>
+
+nmap <Leader>? :update<CR>:GhcModType<CR>
+
+function! DockerSetup()
+  if filereadable("docker-compose.yml")
+    let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
+    let g:dispatch_compilers["docker-compose run web"] = ""
+  endif
+endfunction
+
+autocmd BufNewFile,BufRead * :call DockerSetup()

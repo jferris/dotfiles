@@ -8,3 +8,5 @@ alias mpkg="makepkg -s"
 alias t="todo.sh"
 alias fs="foreman start"
 alias sc="sudo systemctl"
+
+alias dc="docker-compose"
