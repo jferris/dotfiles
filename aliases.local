@@ -1,7 +1,7 @@
 alias s=rspec
 alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:prepare"
-alias pb="paperback"
+alias pb="docker run -v $PWD:/source thoughtbot/paperback"
 alias pm="sudo pacman"
 alias pms="sudo pacman -S --needed"
 alias mpkg="makepkg -s"
