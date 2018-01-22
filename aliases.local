@@ -1,12 +1,10 @@
 alias s=rspec
 alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:prepare"
-alias pb="docker run -v $PWD:/source thoughtbot/paperback"
 alias pm="sudo pacman"
 alias pms="sudo pacman -S --needed"
-alias mpkg="makepkg -s"
-alias t="todo.sh"
-alias fs="foreman start"
 alias sc="sudo systemctl"
-
 alias dc="docker-compose"
+alias brew="echo brew"
+alias launchctl="echo launchctl"
+alias xclipi="xclip -in -selection CLIPBOARD"
