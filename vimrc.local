@@ -24,18 +24,17 @@ set wildmenu wildmode=longest:full,full
 " Run specs using vim-dispatch
 let g:rspec_command = "Dispatch rspec {spec}"
 
-nmap <Leader>d :Dispatch 
-nmap <Leader>g :Start gitsh<CR>
-nmap <Leader>z :Start zsh<CR>
-nmap <Leader>c :Start rails console<CR>
+nmap <Leader>g :silent !urxvt -e gitsh &<CR>
+nmap <Leader>z :silent !urxvt &<CR>
 
-nmap <Leader>? :update<CR>:GhcModType<CR>
+" Easier than "+
+nmap cp "+y
+nmap cv "+p
+nmap cV "+P
 
-function! DockerSetup()
-  if filereadable("docker-compose.yml")
-    let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
-    let g:dispatch_compilers["docker-compose run web"] = ""
-  endif
-endfunction
+" Indent HTML tags
+let g:html_indent_inctags = "p,li"
 
-autocmd BufNewFile,BufRead * :call DockerSetup()
+let g:formatdef_scalafmt = '"scalafmt --stdin 2>/dev/null"'
+let g:formatters_scala = ['scalafmt']
+let g:formatterpath = ['scalafmt']
