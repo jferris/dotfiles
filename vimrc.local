@@ -24,8 +24,8 @@ set wildmenu wildmode=longest:full,full
 " Run specs using vim-dispatch
 let g:rspec_command = "Dispatch rspec {spec}"
 
-nmap <Leader>g :silent !urxvt -e gitsh &<CR>
-nmap <Leader>z :silent !urxvt &<CR>
+nmap <Leader>g :silent !urxvt -e gitsh &> /dev/null &<CR>
+nmap <Leader>z :silent !urxvt &> /dev/null &<CR>
 
 " Easier than "+
 nmap cp "+y
@@ -38,3 +38,5 @@ let g:html_indent_inctags = "p,li"
 let g:formatdef_scalafmt = '"scalafmt --stdin 2>/dev/null"'
 let g:formatters_scala = ['scalafmt']
 let g:formatterpath = ['scalafmt']
+
+set background=light
