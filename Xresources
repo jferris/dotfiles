@@ -1,0 +1,28 @@
+Xft.dpi: 96
+
+xterm*faceName: xft:Inconsolata:size=14
+
+URxvt*font:                           xft:Inconsolata:size=14
+URxvt*urlLauncher:                    chromium
+URxvt*borderLess:                     false
+URxvt*internalBorder:                 0
+
+URxvt.perl-ext-common:      default,clipboard,url-picker
+URxvt.keysym.M-u:           perl:url-picker
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt*scrollBar:            false
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
+URxvt*saveLines:            5000
+
+Xft*autohint:  0
+Xft*lcdfilter: lcddefault
+Xft*hintstyle: hintfull
+Xft*hinting:   1
+Xft*antialias: 1
+Xft*rgba:     rgb
+URxvt*letterSpace: -1
