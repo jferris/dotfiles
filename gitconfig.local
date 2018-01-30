@@ -20,6 +20,7 @@
   rebase-origin = !git fetch origin && git rebase origin/master
   shsh = !git rev-parse --short HEAD | xclip -i -selection clipboard
   unwip = !test "`git log -n1 --pretty=format:%s`" = "wip" && git reset HEAD~1
+  up = !git fetch origin && git rebase origin/master
   wip = !git add -A && git commit -m "wip"
 [user]
   name = Joe Ferris
