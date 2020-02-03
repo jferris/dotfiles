@@ -2,7 +2,7 @@ Xft.dpi: 96
 
 xterm*faceName: xft:Inconsolata:size=14
 
-URxvt*font:                           xft:Inconsolata:size=14
+URxvt*font:                           xft:Inconsolata:size=14,xft:Noto Emoji:size=14
 URxvt*urlLauncher:                    chromium
 URxvt*borderLess:                     false
 URxvt*internalBorder:                 0
