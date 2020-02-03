@@ -24,8 +24,8 @@ set wildmenu wildmode=longest:full,full
 " Run specs using vim-dispatch
 let g:rspec_command = "Dispatch rspec {spec}"
 
-nmap <Leader>g :silent !urxvt -e gitsh &> /dev/null &<CR>
-nmap <Leader>z :silent !urxvt &> /dev/null &<CR>
+nmap <Leader>g :silent !termite --exec gitsh &> /dev/null &<CR><CR>:redraw!<CR>
+nmap <Leader>z :silent !termite &> /dev/null &<CR>:redraw!<CR>
 
 " Easier than "+
 nmap cp "+y
@@ -35,8 +35,24 @@ nmap cV "+P
 " Indent HTML tags
 let g:html_indent_inctags = "p,li"
 
-let g:formatdef_scalafmt = '"scalafmt --stdin 2>/dev/null"'
-let g:formatters_scala = ['scalafmt']
-let g:formatterpath = ['scalafmt']
-
 set background=light
+
+" zsh will reset PATH
+set shell=/usr/bin/sh
+
+let test#strategy = 'dispatch'
+
+set mouse=a
+
+au BufRead,BufNewFile *.sbt set filetype=scala
+
+set shortmess+=c
+set cmdheight=2
+
+let g:markdown_fenced_languages = ['scala']
+
+" Disable elm-vim keybindings and formattign
+let g:elm_setup_keybindings = 0
+let g:elm_format_autosave = 0
+
+set updatetime=300
