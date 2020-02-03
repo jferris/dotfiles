@@ -1,3 +1,9 @@
+" Disable Ale
+augroup ale
+  autocmd!
+  set updatetime=300
+augroup END
+
 " Use relativenumber
 if v:version > 702
   set number
@@ -54,5 +60,3 @@ let g:markdown_fenced_languages = ['scala']
 " Disable elm-vim keybindings and formattign
 let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 0
-
-set updatetime=300

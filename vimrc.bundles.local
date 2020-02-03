@@ -1,4 +1,13 @@
-Plug 'Chiel92/vim-autoformat'
+UnPlug 'vim-run-interactive'
+UnPlug 'vim-elixir'
+UnPlug 'vim-go'
+UnPlug 'vim-coffee-script'
+UnPlug 'vim-slim'
+UnPlug 'ale'
+
 Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'derekwyatt/vim-scala'
 Plug 'skwp/greplace.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'ElmCast/elm-vim'
