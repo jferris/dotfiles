@@ -8,3 +8,4 @@ alias dc="docker-compose"
 alias brew="echo brew"
 alias launchctl="echo launchctl"
 alias xclipi="xclip -in -selection CLIPBOARD"
+alias vim='vim --servername $(basename $(pwd))'
