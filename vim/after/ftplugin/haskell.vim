@@ -61,8 +61,6 @@ setl errorformat=
 highlight hsundefined ctermbg=red guibg=red
 call matchadd("hsundefined", "undefined")
 
-Snippet :: <{name}> :: <{}><CR><{name}> = undefined
-
 nmap <buffer> <Leader>? :update<CR>:GhcModType<CR>
 nmap <buffer> <Leader>_ :update<CR>:GhcModTypeInsert<CR>
 nmap <buffer> <Leader>= :update<CR>:GhcModSigCodegen<CR>
