@@ -4,23 +4,17 @@
   ap = commit --amend -C HEAD
   bd = !sh -c 'git branch -D $1 && git push origin :$1' -
   c = commit -v -S
-  com = checkout master
+  com = !git-checkout-main
   contrib = !sh -c 'git log $1 --pretty=format:%an | sort | uniq' -
   cp = cherry-pick
   dic = diff --cached
-  ignore-date = rebase origin/master --ignore-date
-  mm = !git checkout master && git merge @{-1}
-  pending = !git fetch origin && git fetch production && git log --reverse production/master..origin/master
+  mm = !git-merge-branch
   pr = !git push -u && hub pull-request
-  pristine = !git remote prune origin && git gc --aggressive && git reset --hard && git checkout master && git clean -dfx && git stash cle
   ps = push
   rbc = !git rebase --continue && git status
-  rbi = !git fetch origin && git rebase -i origin/master
-  ready = !git fetch origin && git rebase --interactive origin/master && git rebase origin/master --ignore-date && git push -f && git mm && git push
-  rebase-origin = !git fetch origin && git rebase origin/master
-  shsh = !git rev-parse --short HEAD | xclip -i -selection clipboard
+  rbi = !git-up -i
+  shsh = !git rev-parse --short HEAD | tr -d '\n' | xclip -i -selection clipboard
   unwip = !test "`git log -n1 --pretty=format:%s`" = "wip" && git reset HEAD~1
-  up = !git fetch origin && git rebase origin/master
   wip = !git add -A && git commit -m "wip"
 [user]
   name = Joe Ferris
