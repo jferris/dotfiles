@@ -52,6 +52,8 @@ let test#strategy = 'dispatch'
 set mouse=a
 
 au BufRead,BufNewFile *.sbt set filetype=scala
+au BufRead,BufNewFile *.tf.tmpl set filetype=terraform
+au BufRead,BufNewFile *.bats set filetype=bash
 
 set shortmess+=c
 set cmdheight=2
