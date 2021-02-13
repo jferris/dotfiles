@@ -74,7 +74,8 @@ focus_on_window_activation focus
 
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
-exec --no-startup-id feh --bg-fill ~/.background.jpg
+exec_always --no-startup-id feh --bg-fill ~/.background.jpg
+exec_always --no-startup-id picom
 
 bindsym $mod+shift+w move workspace to output left
 bindsym $mod+shift+e move workspace to output right
