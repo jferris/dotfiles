@@ -1,0 +1,8 @@
+[options]
+font = Inconsolata 14
+cursor_blink = off
+scrollback_lines = 5000
+
+[colors]
+foreground = #ffffff
+background = #000000
