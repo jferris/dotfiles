@@ -41,7 +41,8 @@ nmap cV "+P
 " Indent HTML tags
 let g:html_indent_inctags = "p,li"
 
-set background=light
+set background=dark
+highlight Pmenu ctermfg=black ctermbg=white guibg=white
 
 " zsh will reset PATH
 set shell=/usr/bin/sh
