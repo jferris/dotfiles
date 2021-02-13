@@ -11,3 +11,5 @@ Plug 'skwp/greplace.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ElmCast/elm-vim'
+Plug 'hashivim/vim-terraform'
+Plug 'bfrg/vim-jq'
